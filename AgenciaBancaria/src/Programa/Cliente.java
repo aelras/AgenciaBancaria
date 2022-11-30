@@ -16,6 +16,7 @@ public class Cliente {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
+		counter += 1;   // Cada conta criada acrecenta +1
 	}
 	public String getNome() {
 		return nome;
@@ -35,6 +36,11 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String toString() {
+		return "\nNome: "+ this.getNome() + "\nCPF " + this.getCpf() +
+				"\nEmail: " + this.getEmail();
+ 	}
 	
 	
 	
