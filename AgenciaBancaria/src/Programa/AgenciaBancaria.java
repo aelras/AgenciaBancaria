@@ -146,6 +146,7 @@ public class AgenciaBancaria {
 				contaRemetente.transferir(contaDestinatario, valor);
 			}
 		}
+		operacoes();
 	}
 	
 }
