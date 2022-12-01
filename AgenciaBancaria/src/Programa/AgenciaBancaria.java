@@ -7,6 +7,7 @@ public class AgenciaBancaria {
 	
 	static Scanner input = new Scanner(System.in);
 	static ArrayList<Conta> ContasBancarias;
+	private static Conta[] contasBancarias;
 	
 	public static void main(String[] args) {
 		ContasBancarias = new ArrayList<Conta>();
@@ -80,6 +81,17 @@ public class AgenciaBancaria {
 		operacoes();
 	}
 	
+	
+	private static Conta encontrarConta(int numeroConta) {
+		Conta conta = null;
+		if(ContasBancarias.size() > 0) {
+			for(Conta c : contasBancarias) {
+				if(c.getNumeroConta() == numeroConta);
+				conta = c;
+			}
+		}
+		return conta;
+	}
 	
 }
 		
