@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class AgenciaBancaria {
 
 	static Scanner input = new Scanner(System.in);
-	static ArrayList<Conta> ContasBancarias;
-	private static Conta[] contasBancarias;
+	static ArrayList<Conta> contasBancarias1;
+	private static ArrayList<Conta> contasBancarias;
 
 	public static void main(String[] args) {
-		ContasBancarias = new ArrayList<Conta>();
+		contasBancarias = new ArrayList<Conta>();
 		operacoes();
 	}
 
@@ -67,14 +67,14 @@ public class AgenciaBancaria {
 		System.out.println("\nCPF: ");
 		String cpf = input.next();
 
-		System.out.println();
+		System.out.println("\nEmail:");
 		String email = input.next();
 
 		Cliente cliente = new Cliente(nome, cpf, email);
 
 		Conta conta = new Conta(cliente);
 
-		ContasBancarias.add(conta);
+		contasBancarias.add(conta);
 		System.out.println("Sua conta foi criada com sucesso!");
 
 		operacoes();
@@ -82,13 +82,14 @@ public class AgenciaBancaria {
 
 	private static Conta encontrarConta(int numeroConta) {
 		Conta conta = null;
-		if (ContasBancarias.size() > 0) {
+		if (contasBancarias.size() > 0) {
 			for (Conta c : contasBancarias) {
-				if (c.getNumeroConta() == numeroConta)
+				if (c.getNumeroConta() == numeroConta) {
 					;
 				conta = c;
 			}
 		}
+	}
 		return conta;
 	}
 
@@ -119,7 +120,7 @@ public class AgenciaBancaria {
 			System.out.println("Qual valor deseja sacar? ");
 			Double valorSaque = input.nextDouble();
 			conta.sacar(valorSaque);
-			System.out.println(" Valor sacado com sucesso! ");
+			//System.out.println(" Valor sacado com sucesso! ");
 		} else {
 			System.out.println(" Conta não encontrada!");
 		}
@@ -143,13 +144,17 @@ public class AgenciaBancaria {
 				Double valor = input.nextDouble();
 
 				contaRemetente.transferir(contaDestinatario, valor);
+			}else {
+				System.out.println("A conta para depósito não foi encontrada");
 			}
+		}else {
+			System.out.println("Conta para transferência não encontrada");
 		}
 		operacoes();
 	}
 
 	public static void listarContas() {
-		if (ContasBancarias.size() > 0) {
+		if (contasBancarias.size() > 0) {
 			for (Conta conta : contasBancarias) {
 				System.out.println(conta);
 			}
