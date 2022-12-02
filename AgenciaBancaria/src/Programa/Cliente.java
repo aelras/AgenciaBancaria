@@ -1,6 +1,6 @@
 package Programa;
 
-public class Cliente {
+public class Cliente { 
 
 	private static int counter = 1;  // Conta a partir do número 1 o número da conta
 	

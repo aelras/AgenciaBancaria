@@ -70,7 +70,7 @@ public class Conta {
 				}
 			}
 			
-			public void sacar(Double valor) {
+			public void sacar(Double valor) { 
 				if(valor > 0 && this.getSaldo() >= valor) {
 					setSaldo(getSaldo() - valor);
 					JOptionPane.showMessageDialog(null, "Saque foi realizado com sucesso!");

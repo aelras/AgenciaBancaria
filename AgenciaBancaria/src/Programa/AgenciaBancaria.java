@@ -13,7 +13,7 @@ public class AgenciaBancaria {
 
 	public static void main(String[] args) {
 		contasBancarias = new ArrayList<Conta>();
-		operacoes();
+		operacoes(); 
 	}
 
 	public static void operacoes() {
