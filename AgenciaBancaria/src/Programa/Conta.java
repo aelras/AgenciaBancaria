@@ -76,7 +76,7 @@ public class Conta {
 					JOptionPane.showMessageDialog(null, "Saque foi realizado com sucesso!");
 					
 				}else {
-					JOptionPane.showMessageDialog(null, "Não foi possível realizar o saque!");
+					JOptionPane.showMessageDialog(null, "Valor para saque insuficiente!");
 					
 				}
 			}
